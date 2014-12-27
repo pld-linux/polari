@@ -1,27 +1,27 @@
 Summary:	Polari - IRC client for GNOME 3
 Summary(pl.UTF-8):	Polari - klient IRC dla GNOME 3
 Name:		polari
-Version:	3.12.2
-Release:	2
+Version:	3.14.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Networking
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/polari/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	a1f98170c52286a53b91deae1275c2e5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/polari/3.14/%{name}-%{version}.tar.xz
+# Source0-md5:	126fcc8d4eaa1b1bd3269f62ec0357a9
 URL:		https://wiki.gnome.org/Apps/Polari
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel >= 1:2.40
+BuildRequires:	glib2-devel >= 1:2.42
 BuildRequires:	gobject-introspection-devel >= 0.9.6
-BuildRequires:	gtk+3-devel >= 3.12
+BuildRequires:	gtk+3-devel >= 3.14
 BuildRequires:	intltool >= 0.50.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	telepathy-glib-devel
 BuildRequires:	xz
-Requires(post,postun):	glib2 >= 1:2.40
+Requires(post,postun):	glib2 >= 1:2.42
 Requires:	gjs >= 1.40
-Requires:	glib2 >= 1:2.40
-Requires:	gtk+3 >= 3.12
+Requires:	glib2 >= 1:2.42
+Requires:	gtk+3 >= 3.14
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
