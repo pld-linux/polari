@@ -8,7 +8,7 @@ Group:		X11/Applications/Networking
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/polari/3.14/%{name}-%{version}.tar.xz
 # Source0-md5:	126fcc8d4eaa1b1bd3269f62ec0357a9
 URL:		https://wiki.gnome.org/Apps/Polari
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.42
 BuildRequires:	gobject-introspection-devel >= 0.9.6
 BuildRequires:	gtk+3-devel >= 3.14
