@@ -9,7 +9,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/polari/3.22/%{name}-%{version}.t
 # Source0-md5:	216b1ddeb2e5462c7ec07f6fe9e520a5
 URL:		https://wiki.gnome.org/Apps/Polari
 BuildRequires:	appstream-glib-devel
-BuildRequires:	gettext-tools
+BuildRequires:	gettext-tools >= 0.19.6
 BuildRequires:	glib2-devel >= 1:2.43.4
 BuildRequires:	gobject-introspection-devel >= 0.9.6
 BuildRequires:	gtk+3-devel >= 3.22
@@ -18,7 +18,14 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	telepathy-glib-devel
+BuildRequires:	yelp-tools
 BuildRequires:	xz
+# for configure checks (gjs.pc, gir files for next packages)
+BuildRequires:	gjs-devel >= 1.40
+BuildRequires:	libsecret
+BuildRequires:	libsoup >= 2.4
+BuildRequires:	telepathy-glib
+BuildRequires:	telepathy-logger-libs
 Requires(post,postun):	glib2 >= 1:2.43.4
 Requires:	gjs >= 1.40
 Requires:	glib2 >= 1:2.43.4
