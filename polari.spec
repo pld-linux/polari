@@ -17,7 +17,7 @@ BuildRequires:	intltool >= 0.50.0
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	tar >= 1:1.22
-BuildRequires:	telepathy-glib-devel
+BuildRequires:	telepathy-glib-devel >= 0.12
 BuildRequires:	yelp-tools
 BuildRequires:	xz
 # for configure checks (gjs.pc, gir files for next packages)
@@ -25,8 +25,8 @@ BuildRequires:	gjs-devel >= 1.40
 BuildRequires:	gspell
 BuildRequires:	libsecret
 BuildRequires:	libsoup >= 2.4
-BuildRequires:	telepathy-glib
-BuildRequires:	telepathy-logger-libs
+BuildRequires:	telepathy-glib >= 0.12
+BuildRequires:	telepathy-logger-libs >= 0.2
 Requires(post,postun):	glib2 >= 1:2.43.4
 Requires:	gjs >= 1.40
 Requires:	glib2 >= 1:2.43.4
