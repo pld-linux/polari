@@ -1,21 +1,21 @@
+# TODO: use gtk4-update-icon-cache
 Summary:	Polari - IRC client for GNOME 3
 Summary(pl.UTF-8):	Polari - klient IRC dla GNOME 3
 Name:		polari
-Version:	41.0
+Version:	42.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Networking
-Source0:	https://download.gnome.org/sources/polari/41/%{name}-%{version}.tar.xz
-# Source0-md5:	ee2c85547fba723ad309e0415630b512
+Source0:	https://download.gnome.org/sources/polari/42/%{name}-%{version}.tar.xz
+# Source0-md5:	9c13e2ad00be260d8ecbeaf2614dd5ad
+Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Polari
 BuildRequires:	appstream-glib
 BuildRequires:	gettext-tools >= 0.19.6
 BuildRequires:	gjs-devel >= 1.69.2
 BuildRequires:	glib2-devel >= 1:2.43.4
 BuildRequires:	gobject-introspection-devel >= 1.0
-BuildRequires:	meson >= 0.53.0
-# for syntax checking
-#BuildRequires:	mozjs78 >= 78
+BuildRequires:	meson >= 0.59.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.736
@@ -24,12 +24,19 @@ BuildRequires:	telepathy-glib-devel >= 0.12
 BuildRequires:	yelp-tools
 BuildRequires:	xz
 Requires(post,postun):	glib2 >= 1:2.43.4
+Requires(post,postun):	gtk-update-icon-cache
 # see src/main.js for GI dependencies
 Requires:	gdk-pixbuf2 >= 2.0
 Requires:	gjs >= 1.69.2
 Requires:	glib2 >= 1:2.43.4
+Requires:	graphene
 Requires:	gspell
+# thumbnailer still uses GTK+ 3 and webkit 4.0/4.1
+Requires:	gtk+3 >= 3.0
+Requires:	gtk-webkit4
 Requires:	gtk4 >= 4.0
+Requires:	hicolor-icon-theme
+Requires:	libadwaita
 Requires:	libsecret
 # or libsoup3 >= 3.0
 Requires:	libsoup >= 2.4
@@ -47,6 +54,7 @@ GNOME 3.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %meson build
@@ -65,9 +73,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %glib_compile_schemas
+%update_icon_cache hicolor
 
 %postun
 %glib_compile_schemas
+%update_icon_cache hicolor
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
