@@ -2,12 +2,12 @@
 Summary:	Polari - IRC client for GNOME 3
 Summary(pl.UTF-8):	Polari - klient IRC dla GNOME 3
 Name:		polari
-Version:	42.0
+Version:	42.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Networking
 Source0:	https://download.gnome.org/sources/polari/42/%{name}-%{version}.tar.xz
-# Source0-md5:	9c13e2ad00be260d8ecbeaf2614dd5ad
+# Source0-md5:	6343b4b07f6d1bca90645fc9ba41db7c
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Polari
 BuildRequires:	appstream-glib
