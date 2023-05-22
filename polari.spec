@@ -2,17 +2,17 @@
 Summary:	Polari - IRC client for GNOME 3
 Summary(pl.UTF-8):	Polari - klient IRC dla GNOME 3
 Name:		polari
-Version:	42.1
+Version:	43.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Networking
-Source0:	https://download.gnome.org/sources/polari/42/%{name}-%{version}.tar.xz
-# Source0-md5:	6343b4b07f6d1bca90645fc9ba41db7c
+Source0:	https://download.gnome.org/sources/polari/43/%{name}-%{version}.tar.xz
+# Source0-md5:	f2d63f3bf8f5d8ba679d2bc34700329c
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Polari
 BuildRequires:	appstream-glib
 BuildRequires:	gettext-tools >= 0.19.6
-BuildRequires:	gjs-devel >= 1.69.2
+BuildRequires:	gjs-devel >= 1.73.1
 BuildRequires:	glib2-devel >= 1:2.43.4
 BuildRequires:	gobject-introspection-devel >= 1.0
 BuildRequires:	meson >= 0.59.0
@@ -27,7 +27,7 @@ Requires(post,postun):	glib2 >= 1:2.43.4
 Requires(post,postun):	gtk-update-icon-cache
 # see src/main.js for GI dependencies
 Requires:	gdk-pixbuf2 >= 2.0
-Requires:	gjs >= 1.69.2
+Requires:	gjs >= 1.73.1
 Requires:	glib2 >= 1:2.43.4
 Requires:	graphene
 Requires:	gspell
@@ -38,8 +38,8 @@ Requires:	gtk4 >= 4.0
 Requires:	hicolor-icon-theme
 Requires:	libadwaita
 Requires:	libsecret
-# or libsoup3 >= 3.0
-Requires:	libsoup >= 2.4
+# with fallback to libsoup >= 2.4
+Requires:	libsoup3 >= 3.0
 Requires:	pango >= 1:1.26
 Requires:	telepathy-glib >= 0.12
 Requires:	telepathy-logger-libs >= 0.2
