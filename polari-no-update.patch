@@ -1,6 +1,6 @@
---- polari-42.0/meson.build.orig	2022-03-19 19:37:17.089567000 +0100
-+++ polari-42.0/meson.build	2022-04-17 19:18:19.070087765 +0200
-@@ -53,12 +53,6 @@ config_h = declare_dependency(
+--- polari-46.0/meson.build.orig	2024-05-18 21:03:51.668056553 +0200
++++ polari-46.0/meson.build	2024-05-18 21:05:34.380833443 +0200
+@@ -67,12 +67,6 @@ config_h = declare_dependency(
    include_directories: include_directories('.')
  )
  
@@ -10,6 +10,6 @@
 -  update_desktop_database: true
 -)
 -
- subdir('src')
  subdir('data')
+ subdir('src')
  subdir('po')
